@@ -44,8 +44,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return parseKisilerCevap(cevap.body);
   }
 
+  Future<List<Kisiler>> kisilerAra(String aramaKelimesi) async {
+    var url = Uri.parse("https://fitbodyclub.xyz/deneme/tum_kisiler_arama.php");
+    var veri = {"first_name": aramaKelimesi};
+    var cevap = await http.post(url, body: veri);
+    return parseKisilerCevap(cevap.body);
+  }
+
   Future<void> kisileriGoster() async {
-    var liste = await tumKisiler();
+    var liste = await kisilerAra("a");
 
     for (var k = 0; k < 40; k++) {
       print("**************");
