@@ -51,10 +51,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return parseKisilerCevap(cevap.body);
   }
 
-  Future<void> kisileriGoster() async {
-    var liste = await kisilerAra("a");
+  Future<void> kisiSil(int id) async {
+    var url = Uri.parse("https://fitbodyclub.xyz/deneme/delete_kisiler.php");
+    var veri = {"id": id.toString()};
+    var cevap = await http.post(url, body: veri);
+    print("Silme Cevap ${cevap.body} ");
+  }
 
-    for (var k = 0; k < 40; k++) {
+  Future<void> kisiEkle(String first_name, String email) async {
+    var url = Uri.parse("https://fitbodyclub.xyz/deneme/insert_kisiler.php");
+    var veri = {"first_name": first_name, "email": email};
+    var cevap = await http.post(url, body: veri);
+    print("Ekle Cevap ${cevap.body} ");
+  }
+
+  Future<void> kisiGuncelle(int id, String first_name, String email) async {
+    var url = Uri.parse("https://fitbodyclub.xyz/deneme/update_kisiler.php");
+    var veri = {"id": id.toString(), "first_name": first_name, "email": email};
+    var cevap = await http.post(url, body: veri);
+    print("Değiştirildi mi? ${cevap.body} ");
+  }
+
+  Future<void> kisileriGoster(String yaz) async {
+    var liste = await kisilerAra(yaz);
+
+    for (var k = 0; k < liste.length; k++) {
       print("**************");
       print("Kisi id : ${liste[k].id} ");
       print("Kisi id : ${liste[k].first_name} ");
@@ -63,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    kisileriGoster();
+    kisileriGoster("bora");
     super.initState();
   }
 
