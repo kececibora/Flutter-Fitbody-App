@@ -1,4 +1,4 @@
-import 'package:fitbody_flutter/Kisiler.dart';
+import 'package:fitbody_flutter/HttpRequests/Kisiler.dart';
 
 class KisilerCevap {
   int success;
