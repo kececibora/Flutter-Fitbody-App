@@ -1,8 +1,5 @@
-import 'dart:html';
-
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class GraphScreen extends StatefulWidget {
   const GraphScreen({super.key});
@@ -19,7 +16,7 @@ class _GraphScreenState extends State<GraphScreen> {
         centerTitle: true,
         title: Text("History"),
       ),
-      body: Center(child: Text("Grafikler")),
+      body: Column(),
     );
   }
 }
