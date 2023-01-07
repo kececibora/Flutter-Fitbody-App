@@ -1,6 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:fitbody_flutter/getx-weightTrack/workout.dart';
 import 'package:fitbody_flutter/getx-weightTrack/graph.dart';
-import 'package:fitbody_flutter/getx-weightTrack/history.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,9 +19,20 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Landing Page",
-          style: TextStyle(color: Colors.white),
+          "FitBody",
+          style: TextStyle(color: Colors.amber),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.history,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
       body: _currentScreen, //destination screen
       floatingActionButton: FloatingActionButton(

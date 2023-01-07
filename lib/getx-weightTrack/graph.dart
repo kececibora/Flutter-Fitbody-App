@@ -1,22 +1,22 @@
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:fitbody_flutter/widgets/record_list_tile.dart';
 import 'package:flutter/material.dart';
 
-class GraphScreen extends StatefulWidget {
-  const GraphScreen({super.key});
+class HistoryScreen extends StatefulWidget {
+  const HistoryScreen({super.key});
 
   @override
-  State<GraphScreen> createState() => _GraphScreenState();
+  State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _GraphScreenState extends State<GraphScreen> {
+class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("History"),
-      ),
-      body: Column(),
-    );
+        body: ListView(
+      children: [
+        RecordListTile(),
+        RecordListTile(),
+      ],
+    ));
   }
 }

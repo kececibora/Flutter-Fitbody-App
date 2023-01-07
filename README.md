@@ -8,6 +8,7 @@ It’s a project that created to make MySQL database manipulations by authorized
 - [GetX](https://pub.dev/packages/get) - Dependency used
 - [Http](https://pub.dev/packages/http) - Dependency used
 - [Animated Bottom Navigation](https://pub.dev/packages/animated_bottom_navigation_bar) - Dependency used
+- [intl](https://pub.dev/packages/intl) - Dependency used
 
 ## Contributing
 
