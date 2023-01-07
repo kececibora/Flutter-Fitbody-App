@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/record_list_tile.dart';
+import '../../widgets/record_list_tile_weight.dart';
 
 class WeightHistory extends StatelessWidget {
   const WeightHistory({super.key});
@@ -10,6 +10,8 @@ class WeightHistory extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
+          RecordListTile(),
+          RecordListTile(),
           RecordListTile(),
           RecordListTile(),
           RecordListTile(),

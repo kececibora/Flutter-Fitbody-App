@@ -1,4 +1,4 @@
-import 'package:fitbody_flutter/widgets/record_list_tile.dart';
+import 'package:fitbody_flutter/widgets/record_list_tile_weight.dart';
 import 'package:flutter/material.dart';
 
 class HistoryScreen extends StatefulWidget {
@@ -13,7 +13,17 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
+      physics: BouncingScrollPhysics(),
       children: [
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
+        RecordListTile(),
         RecordListTile(),
         RecordListTile(),
       ],

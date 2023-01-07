@@ -9,6 +9,8 @@ It’s a project that created to make MySQL database manipulations by authorized
 - [Http](https://pub.dev/packages/http) - Dependency used
 - [Animated Bottom Navigation](https://pub.dev/packages/animated_bottom_navigation_bar) - Dependency used
 - [intl](https://pub.dev/packages/intl) - Dependency used
+- [freezed](https://pub.dev/packages/freezed) - Dependency used
+- [build_runner](https://pub.dev/packages/build_runner/) - Dependency used
 
 ## Contributing
 
