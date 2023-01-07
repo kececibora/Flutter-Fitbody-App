@@ -22,8 +22,8 @@ Record _$RecordFromJson(Map<String, dynamic> json) {
 mixin _$Record {
   int get weight => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
-  String get photoUrl => throw _privateConstructorUsedError;
-  String get note => throw _privateConstructorUsedError;
+  String? get photoUrl => throw _privateConstructorUsedError;
+  String? get note => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $RecordCopyWith<$Res> {
   factory $RecordCopyWith(Record value, $Res Function(Record) then) =
       _$RecordCopyWithImpl<$Res, Record>;
   @useResult
-  $Res call({int weight, DateTime dateTime, String photoUrl, String note});
+  $Res call({int weight, DateTime dateTime, String? photoUrl, String? note});
 }
 
 /// @nodoc
@@ -53,8 +53,8 @@ class _$RecordCopyWithImpl<$Res, $Val extends Record>
   $Res call({
     Object? weight = null,
     Object? dateTime = null,
-    Object? photoUrl = null,
-    Object? note = null,
+    Object? photoUrl = freezed,
+    Object? note = freezed,
   }) {
     return _then(_value.copyWith(
       weight: null == weight
@@ -65,14 +65,14 @@ class _$RecordCopyWithImpl<$Res, $Val extends Record>
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      photoUrl: null == photoUrl
+      photoUrl: freezed == photoUrl
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      note: null == note
+              as String?,
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -83,7 +83,7 @@ abstract class _$$_RecordCopyWith<$Res> implements $RecordCopyWith<$Res> {
       __$$_RecordCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int weight, DateTime dateTime, String photoUrl, String note});
+  $Res call({int weight, DateTime dateTime, String? photoUrl, String? note});
 }
 
 /// @nodoc
@@ -98,8 +98,8 @@ class __$$_RecordCopyWithImpl<$Res>
   $Res call({
     Object? weight = null,
     Object? dateTime = null,
-    Object? photoUrl = null,
-    Object? note = null,
+    Object? photoUrl = freezed,
+    Object? note = freezed,
   }) {
     return _then(_$_Record(
       weight: null == weight
@@ -110,14 +110,14 @@ class __$$_RecordCopyWithImpl<$Res>
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      photoUrl: null == photoUrl
+      photoUrl: freezed == photoUrl
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      note: null == note
+              as String?,
+      note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -126,10 +126,7 @@ class __$$_RecordCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Record with DiagnosticableTreeMixin implements _Record {
   const _$_Record(
-      {required this.weight,
-      required this.dateTime,
-      required this.photoUrl,
-      required this.note});
+      {required this.weight, required this.dateTime, this.photoUrl, this.note});
 
   factory _$_Record.fromJson(Map<String, dynamic> json) =>
       _$$_RecordFromJson(json);
@@ -139,9 +136,9 @@ class _$_Record with DiagnosticableTreeMixin implements _Record {
   @override
   final DateTime dateTime;
   @override
-  final String photoUrl;
+  final String? photoUrl;
   @override
-  final String note;
+  final String? note;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -195,8 +192,8 @@ abstract class _Record implements Record {
   const factory _Record(
       {required final int weight,
       required final DateTime dateTime,
-      required final String photoUrl,
-      required final String note}) = _$_Record;
+      final String? photoUrl,
+      final String? note}) = _$_Record;
 
   factory _Record.fromJson(Map<String, dynamic> json) = _$_Record.fromJson;
 
@@ -205,9 +202,9 @@ abstract class _Record implements Record {
   @override
   DateTime get dateTime;
   @override
-  String get photoUrl;
+  String? get photoUrl;
   @override
-  String get note;
+  String? get note;
   @override
   @JsonKey(ignore: true)
   _$$_RecordCopyWith<_$_Record> get copyWith =>

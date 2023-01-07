@@ -11,8 +11,8 @@ class Record with _$Record {
   const factory Record({
     required int weight,
     required DateTime dateTime,
-    required String photoUrl,
-    required String note,
+    String? photoUrl,
+    String? note,
   }) = _Record;
 
   factory Record.fromJson(Map<String, Object?> json) => _$RecordFromJson(json);
