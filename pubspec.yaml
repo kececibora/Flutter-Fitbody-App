@@ -43,6 +43,7 @@ dependencies:
   freezed: ^2.3.2
   freezed_annotation: ^2.2.0
   json_annotation: ^4.7.0
+  numberpicker: ^2.1.1
 
 dev_dependencies:
   flutter_test:

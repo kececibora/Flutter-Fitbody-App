@@ -11,6 +11,7 @@ It’s a project that created to make MySQL database manipulations by authorized
 - [intl](https://pub.dev/packages/intl) - Dependency used
 - [freezed](https://pub.dev/packages/freezed) - Dependency used
 - [build_runner](https://pub.dev/packages/build_runner/) - Dependency used
+- [numberpicker](https://pub.dev/packages/numberpicker) - Dependency used
 
 ## Contributing
 

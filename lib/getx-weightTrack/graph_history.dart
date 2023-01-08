@@ -20,7 +20,7 @@ class _RealHistoryScreenState extends State<RealHistoryScreen> {
             leading: BackButton(color: Colors.amber),
             centerTitle: true,
             title: Text(
-              "Kilo",
+              "Geçmiş Ölçümler",
               style: TextStyle(color: Colors.amber),
             ),
           ),
