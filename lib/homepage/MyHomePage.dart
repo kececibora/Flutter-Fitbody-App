@@ -1,4 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:fitbody_flutter/getx-weightTrack/add_record.dart';
+import 'package:fitbody_flutter/getx-weightTrack/graph_history.dart';
 import 'package:fitbody_flutter/getx-weightTrack/workout.dart';
 import 'package:fitbody_flutter/getx-weightTrack/graph.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Icon(
               Icons.history,
-              color: Colors.white,
+              color: Colors.amber,
             ),
             onPressed: () {
+              Get.to(() => RealHistoryScreen());
               // do something
             },
           )
@@ -37,7 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _currentScreen, //destination screen
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => AddRecordView());
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(

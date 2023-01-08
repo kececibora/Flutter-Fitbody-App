@@ -11,26 +11,10 @@ class HistoryScreen extends StatefulWidget {
 }
 
 class _HistoryScreenState extends State<HistoryScreen> {
-  final Controller _controller = Get.put(Controller());
-
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Scaffold(
-          body: _controller.records.isEmpty
-              ? Center(
-                  child: Container(
-                    child: Text(
-                      "Lütfen Kayıt Yapınız!",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                  ),
-                )
-              : ListView(
-                  physics: BouncingScrollPhysics(),
-                  children: _controller.records
-                      .map((record) => RecordListTile(record: record))
-                      .toList(),
-                ),
-        ));
+    return Scaffold(
+      body: Center(),
+    );
   }
 }
