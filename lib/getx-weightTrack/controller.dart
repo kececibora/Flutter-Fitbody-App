@@ -8,4 +8,13 @@ class Controller extends GetxController {
     Record(weight: 77, dateTime: DateTime.now(), note: "CCC"),
     Record(weight: 66, dateTime: DateTime.now(), note: "DDD"),
   ].obs;
+
+  void addRecord() {
+    records.add(Record(weight: 90, dateTime: DateTime.now(), note: "XXX"));
+    print(records.length);
+  }
+
+  void deleteRecord(Record record) {
+    records.remove(record);
+  }
 }

@@ -15,14 +15,22 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: ListView(
-      physics: BouncingScrollPhysics(),
-      children: [
-        Text(_controller.records[0].note!),
-        Text(_controller.records[1].note!),
-        Text(_controller.records[2].note!)
-      ],
-    ));
+    return Obx(() => Scaffold(
+          body: _controller.records.isEmpty
+              ? Center(
+                  child: Container(
+                    child: Text(
+                      "Lütfen Kayıt Yapınız!",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
+                )
+              : ListView(
+                  physics: BouncingScrollPhysics(),
+                  children: _controller.records
+                      .map((record) => RecordListTile(record: record))
+                      .toList(),
+                ),
+        ));
   }
 }
