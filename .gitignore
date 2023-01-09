@@ -6,8 +6,8 @@
 .dart_tool/
 .pub-cache/
 
-# Build output
-build/
+
+
 
 # Dependency files
 *.lock
