@@ -16,7 +16,8 @@ class LoginController extends GetxController {
     loading.value = true;
     try {
       await loginWithFirebase();
-      // navigate to the desired page
+      Get.to(() => MyHomePage());
+      print("Başarılı");
     } catch (e) {
       Get.snackbar("Başarısız!", "");
       print(e);
