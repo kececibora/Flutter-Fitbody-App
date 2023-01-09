@@ -29,7 +29,7 @@ class RecordListTile extends StatelessWidget {
     );
   }
 
-  Text dateFormat() => Text(DateFormat("EEE,MMM d, ").format(record.dateTime));
+  Text dateFormat() => Text(DateFormat('D/M/y').format(record.dateTime));
   Row cardIcons() {
     return Row(
       mainAxisSize: MainAxisSize.min,

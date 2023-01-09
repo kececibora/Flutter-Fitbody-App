@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/route_manager.dart';
-
+import 'package:get/get.dart';
+import 'package:fitbody_flutter/getx-weightTrack/controller.dart';
 import 'homepage/MyHomePage.dart';
 
 void main() {
+  Get.put(Controller());
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(MyApp());

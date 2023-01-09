@@ -1,6 +1,11 @@
+import 'package:fitbody_flutter/getx-weightTrack/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 import 'package:numberpicker/numberpicker.dart';
+
+import '../models/record.dart';
 
 class AddRecordView extends StatefulWidget {
   const AddRecordView({super.key});
@@ -24,11 +29,11 @@ class _AddRecordViewState extends State<AddRecordView> {
                         brightness: Brightness.light,
                         primary: Colors.black,
                         onPrimary: Colors.yellow,
-                        secondary: Colors.black,
-                        onSecondary: Colors.black,
+                        secondary: Colors.white,
+                        onSecondary: Colors.white,
                         error: Colors.black,
                         onError: Colors.black,
-                        background: Colors.black,
+                        background: Colors.white,
                         onBackground: Colors.yellow,
                         surface: Colors.yellow,
                         onSurface: Colors.white)),
@@ -110,7 +115,7 @@ class _AddRecordViewState extends State<AddRecordView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        DateFormat('EEE,MMM d').format(_selectedDate),
+                        DateFormat('D/M/y').format(_selectedDate),
                       ),
                     ],
                   ),
@@ -122,13 +127,19 @@ class _AddRecordViewState extends State<AddRecordView> {
           ),
         ),
         ElevatedButton(
-          onPressed: () {},
-          child: Text("Kaydet"),
-          style: ElevatedButton.styleFrom(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          ),
-        ),
+          onPressed: () {
+            try {
+              Get.find<Controller>().addRecord(Record(
+                weight: _selectedValue,
+                dateTime: _selectedDate,
+              ));
+              Get.snackbar("Başarılı!", '');
+            } catch (e) {
+              Get.snackbar("Hata!", '${e}');
+            }
+          },
+          child: Text('Ölçümü Ekle'),
+        )
       ]),
     );
   }
