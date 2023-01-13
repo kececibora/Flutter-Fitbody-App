@@ -19,6 +19,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.backspace_outlined, color: Colors.white),
+          onPressed: () => Get.back(),
+        ),
         centerTitle: true,
         title: Text(
           "FitBody",

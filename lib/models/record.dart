@@ -12,7 +12,6 @@ class Record with _$Record {
     required int weight,
     required DateTime dateTime,
     String? photoUrl,
-    String? note,
   }) = _Record;
 
   factory Record.fromJson(Map<String, Object?> json) => _$RecordFromJson(json);
